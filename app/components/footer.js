@@ -39,7 +39,7 @@ export default function Footer() {
       </section>
       <section className="flex flex-col">
         <h1 className="text-2xl mb-2">SOCIAL</h1>
-        <div className="flex space-x-2">
+        <div className="flex space-x-4">
           <FaFacebook className="text-xl" />
           <FaInstagram className="text-xl" />
           <FaTwitter className="text-xl" />

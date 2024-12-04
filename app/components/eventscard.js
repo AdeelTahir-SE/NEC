@@ -10,7 +10,7 @@ export default function EventsCard({title, desc, image}) {
         alt="Event Image" 
         width={400} 
         height={300} 
-        className="w-full" // Ensures the image takes full width without rounding
+        className="w-full" 
       />
       <section className="p-4 ">
       <h2 className="text-2xl font-bold mt-4 text-blue-900">{title ? title : "Event Title"}</h2>

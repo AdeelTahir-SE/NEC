@@ -23,10 +23,10 @@ export default function EventsCardSection({title}) {
       <div className="grid grid-cols-3 gap-4">
         {events && events.map((ele) => (
           <EventsCard
-            key={ele.id} // Use a unique identifier
-            title={ele.title} // Assuming 'title' is the correct property
-            desc={ele.body} // Assuming 'body' is the description
-            image="/testingimage.svg" // Placeholder image path
+            key={ele.id} 
+            title={ele.title} 
+            desc={ele.body} 
+            image="/testingimage.svg" 
           />
         ))}
       </div>

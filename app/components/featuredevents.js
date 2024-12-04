@@ -11,13 +11,13 @@ export default function FeaturedEvents() {
           <Image
             src="/testingimage.svg"
             alt="Event Image"
-            width={400}  // Adjust width as needed
-            height={300} // Adjust height as needed
+            width={400}  
+            height={300} 
             className="rounded-l-lg flex-none" 
             style={{ borderTopRightRadius: '0', borderBottomRightRadius: '0' }} 
           />
         </div>
-        <div className="flex-grow max-w-xl"> {/* Use flex-grow to fill space */}
+        <div className="flex-grow max-w-xl"> 
           <h2 className="text-3xl mb-4 ml-4 font-nunitosan font-bold">
             Lorem Picsum
           </h2>
