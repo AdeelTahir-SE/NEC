@@ -6,9 +6,9 @@ export default function EventsCardSection({title}) {
   const [events, setEvents] = useState([]);
 
   async function fetchEvents() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch(`/api/events?type=${title}`);
     const data = await response.json();
-    setEvents(data.slice(0, 10)); 
+    setEvents(data); 
   }
 
   useEffect(() => {

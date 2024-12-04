@@ -1,13 +1,14 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import {  ref, set } from "firebase/database";
+import { addDoc,collection } from "firebase/firestore";
 import FB from "./connectDB";
-const { auth, db } = FB;
-
+import { auth } from "./connectDB";
+const { db } = FB;
 export async function registerUser(email, password) {
   try {
+
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     
-     await set(ref(db, `/users/${userCredential.user.uid}`), {
+     await addDoc(collection(db, "users"), {
       email: email,
       password: password, 
     });
