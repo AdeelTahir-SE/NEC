@@ -11,7 +11,7 @@ export default function Event(){
             <EventsHeroSection/>
             <FeaturedEvents/>
             <EventsCardSection title="Upcoming Events"/>
-            <EventsCardSection title="past Events"/>
+            <EventsCardSection title="Past Events"/>
             <Footer />
         </div>
     )
