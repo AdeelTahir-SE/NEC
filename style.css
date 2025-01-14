@@ -134,6 +134,36 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
+/* Responsive Adjustments for Hero Section */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .hero-image-container {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+}
+
 
 /* About Us */
 .about-us {
@@ -159,6 +189,26 @@ h1, h2, h3 {
     width: 430px;
     border-radius: 10px;
 }
+
+/* Responsive Adjustments for About Us Section */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .about-content img {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+}
+
 
 /* Upcoming Events */
 .upcoming-events {
@@ -216,6 +266,12 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
+/* Responsive Adjustments for Upcoming Events Section */
+@media (max-width: 768px) {
+    .event-gallery {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+}
 
 /* Stay in Touch */
 .stay-in-touch {
@@ -223,7 +279,6 @@ h1, h2, h3 {
     background-color: #f9f9fa; /* Professional deep blue background */
     color: white;
     text-align: center;
-    /* border-top: 5px solid #0f8f98; Accent border for separation */
 }
 
 .stay-in-touch h3 {
@@ -273,9 +328,7 @@ h1, h2, h3 {
     border-radius: 50%; /* Ensures a circular icon */
 }
 
-
 /* Footer */
-/* Footer Section */
 footer {
     background-color: #1f4e79; /* Deep blue background */
     color: white;
@@ -361,6 +414,28 @@ footer {
     color: #0f8f98;
     transform: scale(1.1);
 }
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo, .footer-navigation, .footer-contact-info, .footer-social {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-navigation ul {
+        padding: 0;
+    }
+
+    .footer-navigation ul li {
+        margin: 5px 0;
+    }
+}
+
 
 
 
