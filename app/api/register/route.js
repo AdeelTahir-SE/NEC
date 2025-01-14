@@ -1,4 +1,4 @@
-import { registerUser } from "@/app/DB/UserDB";
+import { registerUser } from "@/db/UserDB";
 import { NextResponse } from "next/server";
 export async function POST(request){
     const {email,password}=request.body;

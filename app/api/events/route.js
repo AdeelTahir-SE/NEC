@@ -1,4 +1,4 @@
-import { createEvent,getEventsbyType } from "@/app/DB/EventsDB";
+import { createEvent,getEventsbyType } from "@/db/EventsDB";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {

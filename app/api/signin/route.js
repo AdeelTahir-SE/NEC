@@ -1,4 +1,4 @@
-import { loginUser } from "@/app/DB/UserDB";
+import { loginUser } from "@/db/UserDB";
 export default function POST(request){
 const {email,password}=request.body;
 const user=loginUser(email,password);
