@@ -1,9 +1,9 @@
-import { createEvent,getEventsbyType } from "@/db/EventsDB";
+import { createEvent, getEventsbyType } from "@/db/EventsDB";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const url = new URL(request.url); 
-  const type = url.searchParams.get("type"); 
+  const url = new URL(request.url);
+  const type = url.searchParams.get("type");
 
   if (!type) {
     return NextResponse.json(
@@ -25,9 +25,9 @@ export async function GET(request) {
 }
 
 
-export async function POST(request){
-    const { title, desc, imageurl, type } = request.body;
-    
-    const event = createEvent(title, desc, imageurl, type);
-    return NextResponse.json({message:"Event created successfully",status:200,event});
+export async function POST(request) {
+  const { title, desc, imageurl, type } = request.body;
+
+  const event = createEvent(title, desc, imageurl, type);
+  return NextResponse.json({ message: "Event created successfully", status: 200, event });
 }

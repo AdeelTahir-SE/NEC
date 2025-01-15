@@ -1,5 +1,5 @@
 import Image from "next/image";
-import './style.css'
+import '../style.css'
 
 export default function Home() {
     return (
@@ -18,9 +18,9 @@ export default function Home() {
                     </div>
                     <ul>
                         <li><a href="/home">Home</a></li>
-                        <li><a href="/about-us">About Us</a></li>
+                        <li><a href="/about">About Us</a></li>
                         <li><a href="/events">Events</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
