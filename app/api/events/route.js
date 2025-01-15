@@ -25,9 +25,26 @@ export async function GET(request) {
 }
 
 
-export async function POST(request){
-    const { title, desc, imageurl, type } = request.body;
+
+export async function POST(request) {
+  try {
+    // Parse the incoming JSON body
+    const { title, desc, imgurl, type } = await request.json();
     
-    const event = createEvent(title, desc, imageurl, type);
-    return NextResponse.json({message:"Event created successfully",status:200,event});
+    console.log(title, imgurl, desc, type);
+
+    const event = { title, desc, imgurl, type };
+ await createEvent(title,desc,imgurl,type);
+    return NextResponse.json({
+      message: "Event created successfully",
+      status: 200,
+      event
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    return NextResponse.json({
+      message: "Error parsing request body",
+      status: 500
+    });
+  }
 }

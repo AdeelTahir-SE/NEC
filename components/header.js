@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import Link from "next/link";
 
 export default function Header() {
@@ -17,9 +18,9 @@ export default function Header() {
         </ul>
       </nav>
       <div>
-        <button className="border-2 border-slate-700 rounded-3xl px-6 py-2 hover:bg-slate-700 hover:text-white transition-colors">
+        <Link href="/register" className="border-2 border-slate-700 rounded-3xl px-6 py-2 hover:bg-slate-700 hover:text-white transition-colors">
           Join Now
-        </button>
+        </Link>
       </div>
     </header>
   );

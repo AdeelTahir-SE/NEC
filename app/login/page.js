@@ -1,33 +1,22 @@
 "use client"
 import React, { useState } from 'react';
-import { registerUser } from "@/db/UserDB.js"; // Adjust the path to your file containing the registerUser function
+import Link from 'next/link';
+import { loginUser } from '@/db/UserDB.js'; // Adjust the path to your file containing the loginUser function
 
-export default function Register() {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
     try {
-      await registerUser(email, password);
-      setSuccess("User registered successfully.");
-      setError('');
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      window.href.location = '/';
+      await loginUser(email, password);
+
+      window.location.href = '/'; 
     } catch (err) {
-      setError(err.message || "An error occurred while registering.");
-      setSuccess('');
+      setError(err.message || "An error occurred while logging in.");
     }
   };
 
@@ -35,7 +24,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-[#fcfdfe] text-[#333]">
       <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
         <h1 className="text-2xl font-bold text-center text-[#1f4e79] mb-6">
-          Register
+          Login
         </h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -56,7 +45,7 @@ export default function Register() {
           </div>
 
           {/* Password */}
-          <div className="mb-4">
+          <div className="mb-6">
             <label
               htmlFor="password"
               className="block text-sm font-medium text-[#333] mb-1"
@@ -73,43 +62,23 @@ export default function Register() {
             />
           </div>
 
-          <div className="mb-6">
-            <label
-              htmlFor="confirm-password"
-              className="block text-sm font-medium text-[#333] mb-1"
-            >
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="confirm-password"
-              placeholder="Confirm your password"
-              className="w-full px-4 py-2 border border-[#d2eae9] rounded-md focus:ring-2 focus:ring-[#0f8f98] focus:outline-none"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
-
           {/* Error Message */}
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-          {/* Success Message */}
-          {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
-
-          {/* Register Button */}
+          {/* Login Button */}
           <button
             type="submit"
             className="w-full bg-[#0c273f] text-white font-semibold py-2 rounded-md hover:bg-[#155a7c] transition duration-300"
           >
-            Register
+            Login
           </button>
         </form>
 
         <p className="text-sm text-center text-[#333] mt-4">
-          Already have an account?{' '}
-          <a href="/login" className="text-[#0f8f98] hover:underline">
-            Login
-          </a>
+          Don't have an account?{' '}
+          <Link href="/register" className="text-[#0f8f98] hover:underline">
+              Register
+          </Link>
         </p>
       </div>
     </div>

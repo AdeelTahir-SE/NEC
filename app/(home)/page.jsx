@@ -1,183 +1,113 @@
+import Footer from "@/components/footer";
 import Image from "next/image";
-import './style.css'
+import Header from "@/components/header";
 
 export default function Home() {
-    return (
-        <body>
+  return (
+    <section className="font-poppins bg-[#fcfdfe] text-[#333]">
+     <Header/>
+      <section className="flex items-center justify-between py-20 px-10 bg-[#abfff1] gap-5">
+        <div className="max-w-[50%] text-left pr-7">
+          <h1 className="text-4xl mb-10 leading-snug text-[#000101]">
+            NUST <br /> ENTREPRENEURS <br /> CLUB
+          </h1>
+          <p className="text-lg mb-6 leading-relaxed">
+            A vibrant community of innovators, <br /> dreamers, and doers ready
+            to <br /> disrupt the status quo.
+          </p>
+          <a
+            href="#about-us"
+            className="px-4 py-2 bg-[#0c273f] text-white font-bold rounded-lg hover:bg-[#155a7c]"
+          >
+            See More
+          </a>
+        </div>
+        <div className="flex justify-center items-center">
+          <Image
+            src="/hover_secton-removebg-preview.png"
+            alt="Hero Image"
+            className="rounded-lg max-w-[118%]"
+            width={100}
+            height={100}
+          />
+        </div>
+      </section>
 
-            <nav className="navbar">
-                <div className="navbar-container">
-                    <div className="logo-container">
-                        <Image
-                            src="/nec_logo-removebg-preview.png"
-                            alt="NEC Logo"
-                            className="nec-logo"
-                            width={100}
-                            height={100}
-                        />
-                    </div>
-                    <ul>
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/events">Events</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
-                    </ul>
-                </div>
-            </nav>
+      {/* About Us */}
+      <section id="about-us" className="text-center py-16">
+        <h2 className="text-3xl mb-12">About Us</h2>
+        <div className="flex items-center justify-center gap-5">
+          <p className="text-lg leading-relaxed flex-1">
+            We are a leading technology company focused on delivering
+            cutting-edge solutions to transform industries and businesses. Our
+            expertise spans across various domains including Cloud Computing,
+            AI, and Cybersecurity. At NEC Technologies, we strive to innovate
+            and create impactful solutions that drive change and empower
+            businesses to achieve their goals.
+          </p>
+          <Image
+            src="/about_us-removebg-preview (1).png"
+            alt="About Us Image"
+            className="rounded-lg"
+            width={100}
+            height={100}
+          />
+        </div>
+      </section>
 
+      {/* Upcoming Events */}
+      <section
+        id="upcoming-events"
+        className="py-16 text-center bg-[#abfff1] text-[#333]"
+      >
+        <h2 className="text-3xl mb-12 text-[#1f4e79] font-bold">Upcoming Events</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[1, 2, 3, 4].map((item) => (
+            <div
+              key={item}
+              className="text-center p-4 bg-[#0e577b] rounded-lg shadow-md transition-transform hover:translate-y-[-10px] hover:shadow-lg"
+            >
+              <Image
+                src={`/upcoming events${item}.jpg`}
+                alt={`Event Image ${item}`}
+                className="rounded-lg mb-3 transition-transform hover:scale-110"
+                width={100}
+                height={100}
+              />
+              <p className="text-white font-semibold">Event Name {item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* Stay in Touch */}
+      <section className="py-16 text-center bg-[#f9f9fa] text-[#333]">
+        <h3 className="text-3xl mb-4 font-bold text-[#061d3e]">Stay in Touch</h3>
+        <p className="text-lg mb-8 text-[#051e55] leading-relaxed">
+          We’d love to connect with you on our social platforms. Follow us for
+          updates!
+        </p>
+        <div className="flex justify-center gap-5 flex-wrap">
+          {["Twitter", "YouTube", "Instagram"].map((platform) => (
+            <a
+              key={platform}
+              href="#"
+              className="flex items-center gap-2 px-5 py-2 bg-white text-[#104474] font-bold rounded-full shadow-md hover:bg-[#0f8f98] hover:text-white hover:translate-y-[-5px]"
+            >
+              <Image
+                src={`/${platform.toLowerCase()} logo.webp`}
+                alt={`${platform} Icon`}
+                className="w-5 h-5 rounded-full"
+                width={100}
+                height={100}
+              />
+              {platform}
+            </a>
+          ))}
+        </div>
+      </section>
 
-            <section className="hero-section" id="home">
-                <div className="hero-text">
-                    <h1>NUST <br /> ENTREPRENEURS <br /> CLUB</h1>
-                    <p>A vibrant community of innovators,<br />dreamers, and doers ready to<br />disrupt the status quo.</p>
-                    <a href="#about-us" className="btn">See More</a>
-                </div>
-                <div className="hero-image-container">
-                    <Image
-                        src="/hover_secton-removebg-preview.png"
-                        alt="Hero Image"
-                        className="hero-image"
-                        width={100}
-                        height={100}
-                    />
-                </div>
-            </section>
-
-
-            <section className="about-us" id="about-us">
-                <h2>About Us</h2>
-                <div className="about-content">
-                    <p>
-                        We are a leading technology company focused on delivering cutting-edge solutions to transform
-                        industries and businesses. Our expertise spans across various domains including Cloud Computing,
-                        AI, and Cybersecurity. At NEC Technologies, we strive to innovate and create impactful solutions
-                        that drive change and empower businesses to achieve their goals.
-                    </p>
-                    <Image
-                        src="/about_us-removebg-preview (1).png"
-                        alt="About Us Image"
-                        width={100}
-                        height={100}
-                    />
-                </div>
-            </section>
-
-            <section className="upcoming-events" id="upcoming-events">
-                <h2>Upcoming Events</h2>
-                <div className="event-gallery">
-                    <div className="event-card">
-                        <Image
-                            src="/upcoming events3.jpg"
-                            alt="Event Image 1"
-                            width={100}
-                            height={100}
-                        />
-                        <p>Event Name 1</p>
-                    </div>
-                    <div className="event-card">
-                        <Image
-                            src="/upcoming events4.jpg"
-                            alt="Event Image 2"
-                            width={100}
-                            height={100}
-                        />
-                        <p>Event Name 2</p>
-                    </div>
-                    <div className="event-card">
-                        <Image
-                            src="/upcoming events.jpg"
-                            alt="Event Image 3"
-                            width={100}
-                            height={100}
-                        />
-                        <p>Event Name 3</p>
-                    </div>
-                    <div className="event-card">
-                        <Image
-                            src="/upcoming events2.jpg"
-                            alt="Event Image 4"
-                            width={100}
-                            height={100}
-                        />
-                        <p>Event Name 4</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <section className="stay-in-touch">
-                <h3>Stay in Touch</h3>
-                <p>We’d love to connect with you on our social platforms. Follow us for updates!</p>
-                <div className="social-icons">
-                    <a href="#" className="social-icon twitter">
-                        <Image
-                            src="/twitter logo.webp"
-                            alt="Twitter Icon"
-                            width={100}
-                            height={100}
-                        />
-                        Twitter
-                    </a>
-                    <a href="#" className="social-icon youtube">
-                        <Image
-                            src="/youtube logo.jpeg"
-                            alt="YouTube Icon"
-                            width={100}
-                            height={100}
-                        /> YouTube
-                    </a>
-                    <a href="#" className="social-icon instagram">
-                        <Image
-                            src="/instagram lgo.webp"
-                            alt="Instagram Icon"
-                            width={100}
-                            height={100}
-                        /> Instagram
-                    </a>
-                </div>
-            </section>
-
-            <footer id="contact-us">
-                <div className="footer-container">
-                    <div className="footer-logo">
-                        <Image
-                            src="/logo-removebg-preview.png"
-                            alt="NEC Logo"
-                            width={100}
-                            height={100}
-                        />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod.</p>
-                    </div>
-
-                    <div className="footer-navigation">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about-us">About Us</a></li>
-                            <li><a href="#upcoming-events">Events</a></li>
-                            <li><a href="#contact-us">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="footer-contact-info">
-                        <h4>Contact Info</h4>
-                        <p><i className="fa fa-phone"></i> +1 800-123-4567</p>
-                        <p><i className="fa fa-envelope"></i> info@nec.com</p>
-                        <p><i className="fa fa-map-marker"></i> 123 NEC Street, City, Country</p>
-                    </div>
-
-                    <div className="footer-social">
-                        <h4>Social</h4>
-                        <a href="#"><i className="fa fa-facebook"></i></a>
-                        <a href="#"><i className="fa fa-twitter"></i></a>
-                        <a href="#"><i className="fa fa-instagram"></i></a>
-                    </div>
-                </div>
-            </footer>
-
-
-        </body>
-
-    );
+    <Footer/>
+    </section>
+  );
 }

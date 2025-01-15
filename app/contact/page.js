@@ -1,43 +1,62 @@
 "use client"
 import React, { useState } from 'react';
-import { registerUser } from "@/db/UserDB.js"; // Adjust the path to your file containing the registerUser function
+import Header from '@/components/header';
+import Footer from '@/components/footer';
 
-export default function Register() {
+export default function ContactUs() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
+    // Basic form validation
+    if (!name || !email || !message) {
+      setError("All fields are required.");
       return;
     }
 
     try {
-      await registerUser(email, password);
-      setSuccess("User registered successfully.");
+      // Simulate form submission (replace with actual API call)
+      // await submitContactForm(name, email, message);
+      setSuccess("Your message has been sent successfully!");
       setError('');
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      window.href.location = '/';
     } catch (err) {
-      setError(err.message || "An error occurred while registering.");
-      setSuccess('');
+      setError("An error occurred while sending your message.");
     }
   };
 
   return (
+    <section>
+      <Header />
     <div className="min-h-screen flex items-center justify-center bg-[#fcfdfe] text-[#333]">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
+      <div className="bg-white shadow-lg rounded-lg w-full max-w-lg p-8">
         <h1 className="text-2xl font-bold text-center text-[#1f4e79] mb-6">
-          Register
+          Contact Us
         </h1>
         <form onSubmit={handleSubmit}>
+          {/* Name */}
+          <div className="mb-4">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-[#333] mb-1"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 border border-[#d2eae9] rounded-md focus:ring-2 focus:ring-[#0f8f98] focus:outline-none"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          {/* Email */}
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -55,38 +74,21 @@ export default function Register() {
             />
           </div>
 
-          {/* Password */}
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-[#333] mb-1"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-              className="w-full px-4 py-2 border border-[#d2eae9] rounded-md focus:ring-2 focus:ring-[#0f8f98] focus:outline-none"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
+          {/* Message */}
           <div className="mb-6">
             <label
-              htmlFor="confirm-password"
+              htmlFor="message"
               className="block text-sm font-medium text-[#333] mb-1"
             >
-              Confirm Password
+              Message
             </label>
-            <input
-              type="password"
-              id="confirm-password"
-              placeholder="Confirm your password"
+            <textarea
+              id="message"
+              placeholder="Enter your message"
               className="w-full px-4 py-2 border border-[#d2eae9] rounded-md focus:ring-2 focus:ring-[#0f8f98] focus:outline-none"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              rows="4"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
 
@@ -96,22 +98,17 @@ export default function Register() {
           {/* Success Message */}
           {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
 
-          {/* Register Button */}
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-[#0c273f] text-white font-semibold py-2 rounded-md hover:bg-[#155a7c] transition duration-300"
           >
-            Register
+            Send Message
           </button>
         </form>
-
-        <p className="text-sm text-center text-[#333] mt-4">
-          Already have an account?{' '}
-          <a href="/login" className="text-[#0f8f98] hover:underline">
-            Login
-          </a>
-        </p>
       </div>
     </div>
+    <Footer/>
+    </section>
   );
 }

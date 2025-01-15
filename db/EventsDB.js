@@ -4,6 +4,7 @@ import FB from "./connectDB"
 const { db } = FB;
 
 export async function createEvent(title, desc,imageurl,type) {
+  console.log(title,desc,imageurl,type)
     try {
         const docRef = await addDoc(collection(db, "events"), {
             title: title,

@@ -10,7 +10,7 @@ export default function FeaturedEvents() {
   async function fetchEvents() {
     const response = await fetch(`/api/events?type=FeaturedEvents`);
     const data = await response.json();
-    setEvents(data); 
+    setEvents(data.events); 
   }
 
   useEffect(() => {
