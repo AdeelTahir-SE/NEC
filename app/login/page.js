@@ -1,12 +1,16 @@
-"use client"
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { loginUser } from '@/db/UserDB.js';
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation"; // Import useRouter
+import { loginUser } from "@/db/UserDB.js";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const router = useRouter(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +18,8 @@ export default function Login() {
     try {
       await loginUser(email, password);
 
-      window.location.href = '/'; 
+      // Navigate to home page
+      router.push("/");
     } catch (err) {
       setError(err.message || "An error occurred while logging in.");
     }
@@ -75,9 +80,9 @@ export default function Login() {
         </form>
 
         <p className="text-sm text-center text-[#333] mt-4">
-          Dont have an account?{' '}
+          Don't have an account?{" "}
           <Link href="/register" className="text-[#0f8f98] hover:underline">
-              Register
+            Register
           </Link>
         </p>
       </div>

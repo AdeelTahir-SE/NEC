@@ -1,13 +1,17 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 import { registerUser } from "@/db/UserDB.js"; // Adjust the path to your file containing the registerUser function
 
 export default function Register() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const router = useRouter(); // Initialize useRouter
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,14 +24,15 @@ export default function Register() {
     try {
       await registerUser(email, password);
       setSuccess("User registered successfully.");
-      setError('');
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      window.href.location = '/';
+      setError("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+
+      router.push("/");
     } catch (err) {
       setError(err.message || "An error occurred while registering.");
-      setSuccess('');
+      setSuccess("");
     }
   };
 
@@ -106,7 +111,7 @@ export default function Register() {
         </form>
 
         <p className="text-sm text-center text-[#333] mt-4">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <a href="/login" className="text-[#0f8f98] hover:underline">
             Login
           </a>
