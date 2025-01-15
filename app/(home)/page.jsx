@@ -1,6 +1,7 @@
 import Footer from "@/components/footer.js";
 import Image from "next/image";
 import Header from "@/components/header.js";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,12 +16,12 @@ export default function Home() {
             A vibrant community of innovators, <br /> dreamers, and doers ready
             to <br /> disrupt the status quo.
           </p>
-          <a
-            href="#about-us"
+          <Link
+            href="/about"
             className="px-4 py-2 bg-[#0c273f] text-white font-bold rounded-lg hover:bg-[#155a7c]"
           >
             See More
-          </a>
+          </Link>
         </div>
         <div className="flex justify-center items-center">
           <Image
@@ -34,7 +35,7 @@ export default function Home() {
       </section>
 
       {/* About Us */}
-      <section id="about-us" className="text-center py-16">
+      <section id="about" className="text-center py-16">
         <h2 className="text-3xl mb-12">About Us</h2>
         <div className="flex items-center justify-center gap-5">
           <p className="text-lg leading-relaxed flex-1">
