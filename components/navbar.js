@@ -20,16 +20,16 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-8">
             <li>
-              <Link href="#home" className="text-gray-700 hover:text-blue-600">Home</Link>
+              <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
             </li>
             <li>
-              <Link href="#about-us" className="text-gray-700 hover:text-blue-600">About Us</Link>
+              <Link href="/about" className="text-gray-700 hover:text-blue-600">About Us</Link>
             </li>
             <li>
-              <Link href="#events" className="text-gray-700 hover:text-blue-600">Events</Link>
+              <Link href="/event" className="text-gray-700 hover:text-blue-600">Events</Link>
             </li>
             <li>
-              <Link href="#contact-us" className="text-gray-700 hover:text-blue-600">Contact Us</Link>
+              <Link href="/contact" className="text-gray-700 hover:text-blue-600">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -56,7 +56,7 @@ export default function Navbar() {
           </label>
           <div className="flex flex-col items-center space-y-4 py-4">
             <Link href="#home" className="text-gray-700 hover:text-blue-600">Home</Link>
-            <Link href="#about-us" className="text-gray-700 hover:text-blue-600">About Us</Link>
+            <Link href="#about" className="text-gray-700 hover:text-blue-600">About Us</Link>
             <Link href="#events" className="text-gray-700 hover:text-blue-600">Events</Link>
             <Link href="#contact-us" className="text-gray-700 hover:text-blue-600">Contact Us</Link>
           </div>

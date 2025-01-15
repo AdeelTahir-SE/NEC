@@ -13,7 +13,7 @@ export default function MainContent() {
           <p className="text-[1.2rem] mb-[25px] text-[#333] leading-[1.5]">
             A vibrant community of innovators, dreamers, and doers ready to disrupt the status quo.
           </p>
-          <Link href="#about-us">
+          <Link href="#about">
             <a className="btn px-[7px] py-[6px] bg-[#0c273f] text-white rounded-[14px] font-bold transition-all hover:bg-[#155a7c]">
               See More
             </a>
@@ -31,7 +31,7 @@ export default function MainContent() {
       </section>
 
       {/* About Us Section */}
-      <section className="about-us py-[60px] px-[20px] text-center" id="about-us">
+      <section className="about py-[60px] px-[20px] text-center" id="about">
         <h2 className="text-[2rem] font-bold mb-[52px] text-[#000101]">About Us</h2>
         <div className="about-content flex justify-center items-center gap-[20px]">
           <p className="text-[22.3px] leading-[1.5] flex-1">

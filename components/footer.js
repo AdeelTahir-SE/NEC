@@ -21,31 +21,23 @@ export default function Footer() {
           <h4 className="text-lg font-bold text-[#f5f9ff] mb-2">Navigation</h4>
           <ul className="list-none p-0">
             <li className="mb-2">
-              <Link href="#">
-                <a className="text-[#d2eae9] hover:text-[#0f8f98] transition-colors">
-                  Home
-                </a>
+              <Link href="/" className='text-[#d2eae9] hover:text-[#0f8f98] transition-colors' >
+                Home
               </Link>
             </li>
             <li className="mb-2">
-              <Link href="#">
-                <a className="text-[#d2eae9] hover:text-[#0f8f98] transition-colors">
-                  About Us
-                </a>
+              <Link href="/about" className='text-[#d2eae9] hover:text-[#0f8f98] transition-colors' >
+                About Us
               </Link>
             </li>
             <li className="mb-2">
-              <Link href="#">
-                <a className="text-[#d2eae9] hover:text-[#0f8f98] transition-colors">
-                  Services
-                </a>
+              <Link href="/events" className='text-[#d2eae9] hover:text-[#0f8f98] transition-colors' >
+                Events
               </Link>
             </li>
             <li className="mb-2">
-              <Link href="#">
-                <a className="text-[#d2eae9] hover:text-[#0f8f98] transition-colors">
-                  Contact
-                </a>
+              <Link href="/contact" className='text-[#d2eae9] hover:text-[#0f8f98] transition-colors' >
+                Contact
               </Link>
             </li>
           </ul>
@@ -63,24 +55,24 @@ export default function Footer() {
         <div className="footer-social flex-1 max-w-[25%]">
           <h4 className="text-lg font-bold text-[#f5f9ff] mb-2">Social</h4>
           <div className="flex space-x-4">
-            <a
+            <p
               href="#"
               className="text-[#d2eae9] text-xl hover:text-[#0f8f98] transition-all transform hover:scale-110"
             >
               <i className="fa fa-facebook"></i>
-            </a>
-            <a
+            </p>
+            <p
               href="#"
               className="text-[#d2eae9] text-xl hover:text-[#0f8f98] transition-all transform hover:scale-110"
             >
               <i className="fa fa-twitter"></i>
-            </a>
-            <a
+            </p>
+            <p
               href="#"
               className="text-[#d2eae9] text-xl hover:text-[#0f8f98] transition-all transform hover:scale-110"
             >
               <i className="fa fa-instagram"></i>
-            </a>
+            </p>
           </div>
         </div>
       </div>
