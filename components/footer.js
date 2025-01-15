@@ -1,13 +1,12 @@
 import Link from 'next/link';
-
+import { FaFacebook,FaInstagram,FaTwitter } from 'react-icons/fa';
 export default function Footer() {
   return (
     <footer className="bg-[#1f4e79] text-white py-10 px-5 font-sans">
       <div className="footer-container flex justify-between items-start flex-wrap gap-5 max-w-screen-xl mx-auto">
-        {/* Footer Logo */}
         <div className="footer-logo flex-1 max-w-[25%]">
           <img
-            src="/your-logo.png"
+            src="/logo-removebg-preview.png"
             alt="Logo"
             className="w-36 mb-4"
           />
@@ -59,19 +58,19 @@ export default function Footer() {
               href="#"
               className="text-[#d2eae9] text-xl hover:text-[#0f8f98] transition-all transform hover:scale-110"
             >
-              <i className="fa fa-facebook"></i>
+              <i className="fa fa-facebook"><FaFacebook/></i>
             </p>
             <p
               href="#"
               className="text-[#d2eae9] text-xl hover:text-[#0f8f98] transition-all transform hover:scale-110"
             >
-              <i className="fa fa-twitter"></i>
+              <i className="fa fa-twitter"><FaTwitter/></i>
             </p>
             <p
               href="#"
               className="text-[#d2eae9] text-xl hover:text-[#0f8f98] transition-all transform hover:scale-110"
             >
-              <i className="fa fa-instagram"></i>
+              <i className="fa fa-instagram"><FaInstagram/></i>
             </p>
           </div>
         </div>

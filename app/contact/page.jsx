@@ -20,8 +20,6 @@ export default function ContactUs() {
     }
 
     try {
-      // Simulate form submission (replace with actual API call)
-      // await submitContactForm(name, email, message);
       setSuccess("Your message has been sent successfully!");
       setError('');
     } catch (err) {
