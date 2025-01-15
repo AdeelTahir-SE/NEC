@@ -1,16 +1,15 @@
 "use client"
 import Image from "next/image";
 import { useState, useEffect } from "react";
-
+import { getEventsbyType } from "@/db/EventsDB";
  
 
 export default function FeaturedEvents() {
   const [events, setEvents] = useState([]);
 
   async function fetchEvents() {
-    const response = await fetch(`/api/events?type=FeaturedEvents`);
-    const data = await response.json();
-    setEvents(data.events); 
+
+    setEvents(await getEventsbyType("Upcoming Events")); 
   }
 
   useEffect(() => {

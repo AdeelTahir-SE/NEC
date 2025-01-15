@@ -1,15 +1,13 @@
 "use client"
 import EventsCard from "./eventscard";
+import { getEventsbyType } from "@/db/EventsDB";
 import { useState, useEffect } from "react";
 
 export default function EventsCardSection({title}) {
   const [events, setEvents] = useState([]);
 
   async function fetchEvents() {
-    const response = await fetch(`/api/events?type=${title}`);
-    const data = await response.json();
-    setEvents(data.events); 
-    console.log(data)
+    setEvents(await getEventsbyType(title)); 
   }
 
   useEffect(() => {
