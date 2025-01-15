@@ -9,7 +9,8 @@ export default function FeaturedEvents() {
 
   async function fetchEvents() {
 
-    setEvents(await getEventsbyType("Upcoming Events")); 
+    const events=await getEventsbyType("Upcoming Events");
+    setEvents( events); 
   }
 
   useEffect(() => {

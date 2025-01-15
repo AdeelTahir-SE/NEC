@@ -7,7 +7,9 @@ export default function EventsCardSection({title}) {
   const [events, setEvents] = useState([]);
 
   async function fetchEvents() {
-    setEvents(await getEventsbyType(title)); 
+    const events =await getEventsbyType(title);
+    console.log(events)
+    setEvents(events); 
   }
 
   useEffect(() => {

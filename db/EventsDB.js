@@ -22,6 +22,7 @@ catch(error){
 export async function getEventsbyType(type) {
   try {
 
+    console.log(type)
     const events = [];
 
     const querySnapshot = await getDocs(query(collection(db, "events"), where("type", "==", type)));
