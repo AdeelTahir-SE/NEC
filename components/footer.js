@@ -18,8 +18,8 @@ export default function Footer() {
         <h1 className="text-2xl mb-2">NAVIGATION</h1>
         <div className="flex flex-col space-y-1">
           <Link href="/" className="text-sm">Home</Link>
-          <Link href="/" className="text-sm">About Us</Link>
-          <Link href="/" className="text-sm">Contact Us</Link>
+          <Link href="/about" className="text-sm">About Us</Link>
+          <Link href="/contact" className="text-sm">Contact Us</Link>
         </div>
       </section>
       <section className="flex flex-col w-1/4">
