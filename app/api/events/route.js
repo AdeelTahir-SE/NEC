@@ -1,9 +1,9 @@
-import { createEvent,getEventsbyType } from "@/db/EventsDB";
+import { createEvent, getEventsbyType } from "@/db/EventsDB";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const url = new URL(request.url); 
-  const type = url.searchParams.get("type"); 
+  const url = new URL(request.url);
+  const type = url.searchParams.get("type");
 
   if (!type) {
     return NextResponse.json(

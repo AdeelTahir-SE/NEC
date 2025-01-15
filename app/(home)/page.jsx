@@ -1,6 +1,10 @@
 import Footer from "@/components/footer";
 import Image from "next/image";
+<<<<<<< HEAD
 import Header from "@/components/header";
+=======
+import '../style.css'
+>>>>>>> 80be9d5f5242f709ec2e89eb6041b9806842b111
 
 export default function Home() {
   return (
@@ -33,6 +37,7 @@ export default function Home() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* About Us */}
       <section id="about-us" className="text-center py-16">
         <h2 className="text-3xl mb-12">About Us</h2>
@@ -54,6 +59,27 @@ export default function Home() {
           />
         </div>
       </section>
+=======
+            <nav className="navbar">
+                <div className="navbar-container">
+                    <div className="logo-container">
+                        <Image
+                            src="/nec_logo-removebg-preview.png"
+                            alt="NEC Logo"
+                            className="nec-logo"
+                            width={100}
+                            height={100}
+                        />
+                    </div>
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+>>>>>>> 80be9d5f5242f709ec2e89eb6041b9806842b111
 
       {/* Upcoming Events */}
       <section
