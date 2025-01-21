@@ -1,8 +1,9 @@
 import Image from "next/image";
 
 import Link from "next/link";
-
+import { useUserContext } from "@/context/context";
 export default function Header() {
+  const {user, loading} = useUserContext();
   return (
     <header className="flex justify-between items-center p-3 bg-white text-slate-700 ">
       <div>
@@ -19,7 +20,7 @@ export default function Header() {
       </nav>
       <div>
         <Link href="/register" className="border-2 border-slate-700 rounded-3xl px-6 py-2 hover:bg-slate-700 hover:text-white transition-colors">
-          Join Now
+          {user?user.name:"Join Now"}
         </Link>
       </div>
     </header>
