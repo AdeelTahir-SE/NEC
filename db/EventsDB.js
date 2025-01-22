@@ -19,6 +19,17 @@ catch(error){
 }
 
 
+export async function registerForEvent(eventId,userId){
+  try {
+    await db.collection("events").doc(eventId).update({
+      users: firebase.firestore.FieldValue.arrayUnion(userId),
+    });
+    console.log(`User ${userId} added to event ${eventId}`);
+  } catch (error) {
+    console.error("Error adding user:", error);
+  }
+}
+
 export async function getEventsbyType(type) {
   try {
 

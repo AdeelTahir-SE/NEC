@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"; // Import useRouter
 import { registerUser } from "@/db/UserDB.js"; // Adjust the path to your file containing the registerUser function
 
 export default function Register() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -22,8 +23,9 @@ export default function Register() {
     }
 
     try {
-      await registerUser(email, password);
+      await registerUser(name,email, password);
       setSuccess("User registered successfully.");
+      setName("");
       setError("");
       setEmail("");
       setPassword("");
@@ -43,6 +45,22 @@ export default function Register() {
           Register
         </h1>
         <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-[#333] mb-1"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your email"
+              className="w-full px-4 py-2 border border-[#d2eae9] rounded-md focus:ring-2 focus:ring-[#0f8f98] focus:outline-none"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
           <div className="mb-4">
             <label
               htmlFor="email"

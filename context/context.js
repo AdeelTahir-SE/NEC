@@ -1,6 +1,7 @@
+"use client"
 import { useContext, createContext } from "react";
 import { useState, useEffect } from "react";
-import userFromDatabase from "@/db/UserDB"
+import {getUser} from "@/db/UserDB"
 const Context = createContext();
 export const useUserContext = () => useContext(Context);
 export default function UserContext({ children }) {
@@ -8,8 +9,7 @@ export default function UserContext({ children }) {
   const [loading, setLoading] = useState(true);
   async function fetchUser() {
     try {
-      const res = await userFromDatabase();
-      const data = await res.json();
+      const data = await getUser();
       setUser(data);
       setLoading(false);
     } catch (err) {
