@@ -1,16 +1,19 @@
 
 import { collection, addDoc, getDocs,doc,updateDoc,arrayUnion, query, where } from "firebase/firestore"
 import FB from "./connectDB"
+import { format } from "date-fns"; // You may need this to format the date for comparison
+
 const { db } = FB;
 
-export async function createEvent(title, desc,imageurl,type) {
+export async function createEvent(title, desc,imageurl,date) {
     try {
         const docRef = await addDoc(collection(db, "events"), {
             title: title,
             desc: desc,
             imageurl: imageurl,
-            type: type,
+            date: date
         });
+        console.log("Event created with ID: ", docRef.id);
         return docRef;
 }
 catch(error){
@@ -48,25 +51,60 @@ export async function userAlreadyRegistered(eventId, userId) {
     return false;
   }
 }
+
+
+
 export async function getEventsbyType(type) {
   try {
-
-    console.log(type)
     const events = [];
+    const currentDate = new Date(); // Get the current date
 
-    const querySnapshot = await getDocs(query(collection(db, "events"), where("type", "==", type)));
+    // Format the current date as 'YYYY-MM-DD' for comparison
+    const formattedCurrentDate = currentDate.toISOString().split('T')[0]; // e.g., '2025-01-27'
+
+    // Build the query based on the provided type
+    let eventsQuery;
+
+    // Query all events regardless of type (we'll filter by date in the code)
+    eventsQuery = query(collection(db, "events"));
+
+    const querySnapshot = await getDocs(eventsQuery);
 
     querySnapshot.forEach((doc) => {
-      events.push({
-        id: doc.id,
-        desc:doc.data().desc,
-        title:doc.data().title,
-        imageurl:doc.data().imageurl,
-        users: doc.data().users || [] 
-      });
+      const eventData = doc.data();
+      const eventDate = eventData.date; // Assuming `date` is stored as a string like '2025-01-20'
+
+      // Case when the date field is present
+      if (eventDate) {
+        const eventDateFormatted = eventDate; // Assuming eventDate is already a 'YYYY-MM-DD' string
+
+        // For "Upcoming Events", add events with date >= current date
+        if (type === "Upcoming Events" && eventDateFormatted >= formattedCurrentDate) {
+          events.push({
+            id: doc.id,
+            desc: eventData.desc,
+            title: eventData.title,
+            imageurl: eventData.imageurl,
+            users: eventData.users || [],
+            date: eventData.date,
+          });
+        }
+
+        // For "Past Events", add events with date < current date
+        if (type === "Past Events" && eventDateFormatted < formattedCurrentDate) {
+          events.push({
+            id: doc.id,
+            desc: eventData.desc,
+            title: eventData.title,
+            imageurl: eventData.imageurl,
+            users: eventData.users || [],
+            date: eventData.date,
+          });
+        }
+      }
     });
 
-    console.log(events);
+    console.log(events); // Log the result for debugging
     return events;
   } catch (error) {
     console.error("Error getting events:", error.message);

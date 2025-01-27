@@ -34,7 +34,7 @@ export default function UpComingEventsCard({ id, title, desc, image, users }) {
         alt="Event Image" 
         width={400} 
         height={300} 
-        className="w-full" 
+        className="w-full min-h-[300px] " 
       />
       <section className="p-4">
         <h2 className="text-2xl font-bold mt-4 text-blue-900">

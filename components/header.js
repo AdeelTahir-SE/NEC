@@ -35,7 +35,7 @@ export default function Header() {
         } md:opacity-100 md:flex md:flex-row md:static md:shadow-none md:bg-transparent md:items-center md:space-x-6`}
       >
         <ul className="flex flex-col md:flex-row md:space-x-6 text-center md:text-left">
-          {["Home", "About", "Events", "Highlights", "Contact", "Register"].map(
+          {["Home", "About", "Events", "Highlights", "Contact", "Register","createEvent"].map(
             (item) => (
               <li key={item} className="py-3 md:py-0">
                 <Link
