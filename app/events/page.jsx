@@ -1,8 +1,9 @@
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import EventsHeroSection from "../../components/eventsherosection";
-import FeaturedEvents from "../../components/featuredevents";
-import EventsCardSection from "../../components/evnetscardsection";
+import PastEvents from "@/components/pastEvents";
+import FeaturedEvents from "@/components/featuredEvent";
+import UpComingEvents from "@/components/upcomingEvents";
 
 export default function Event(){
     return(
@@ -10,8 +11,8 @@ export default function Event(){
             <Header />
             <EventsHeroSection/>
             <FeaturedEvents/>
-            <EventsCardSection title="Upcoming Events"/>
-            <EventsCardSection title="Past Events"/>
+            <PastEvents/>
+            <UpComingEvents/>
             <Footer />
         </div>
     )

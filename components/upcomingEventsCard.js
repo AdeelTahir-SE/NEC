@@ -8,7 +8,7 @@ async function eventRegister(uid,eid){
   await registerForEvent(eid,uid)
 
 }
-export default function CurrentEventsCard({id,title, desc, image,isRegistered}) {
+export default function UpComingEventsCard({id,title, desc, image,isRegistered}) {
   const { user } = useUserContext();
   return (
     <section className="p-0 border rounded-xl  shadow-lg">

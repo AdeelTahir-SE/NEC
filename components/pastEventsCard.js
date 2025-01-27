@@ -1,8 +1,14 @@
-import Link from "next/link";
 import Image from "next/image";
 import { FaArrowRight } from 'react-icons/fa'; 
+import { registerForEvent } from "@/db/EventsDB";
+import { useUserContext } from "@/context/context";
 
-export default function EventsCard({title, desc, image}) {
+async function eventRegister(uid,eid){
+  await registerForEvent(eid,uid)
+
+}
+export default function PastEventsCard({id,title, desc, image,isRegistered}) {
+  const { user } = useUserContext();
   return (
     <section className="p-0 border rounded-xl  shadow-lg">
       <Image 
@@ -18,13 +24,7 @@ export default function EventsCard({title, desc, image}) {
         {desc ? desc : "Brief description of the event goes here. It should be engaging and informative."}
       </p>
       
-      <div className="flex justify-end mt-4">
-        <Link href="/register">
-          <button className="flex items-center  text-white px-4 py-2 bg-customBlue rounded hover:bg-slate-600 transition-colors">
-            Register Now <FaArrowRight className="ml-2" />
-          </button>
-        </Link>
-      </div>
+   
       </section>
     </section>
   );

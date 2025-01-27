@@ -32,6 +32,7 @@ export default function Home() {
             height={100}
           />
         </div>
+        
       </section>
 
       {/* About Us */}

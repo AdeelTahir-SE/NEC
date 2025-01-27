@@ -10,20 +10,36 @@ export async function POST(request) {
     // Parse the incoming JSON body
     const { title, desc, imgurl, type } = await request.json();
     
-    console.log(title, imgurl, desc, type);
+    // Validate required fields
+    if (!title || !desc || !type) {
+      return NextResponse.json(
+        { message: "Missing required fields" },
+        { status: 400 }
+      );
+    }
 
+    // Create event object
     const event = { title, desc, imgurl, type };
- await createEvent(title,desc,imgurl,type);
-    return NextResponse.json({
-      message: "Event created successfully",
-      status: 200,
-      event
-    });
+    
+    // Save to database
+    await createEvent(title, desc, imgurl, type);
+
+    return NextResponse.json(
+      { message: "Event created successfully", event },
+      { status: 201 }  // 201 Created is more appropriate for successful resource creation
+    );
+
   } catch (error) {
     console.error("Error:", error);
-    return NextResponse.json({
-      message: "Error parsing request body",
-      status: 500
-    });
+    
+    // Determine if it's a parsing error or database error
+    const errorMessage = error instanceof SyntaxError 
+      ? "Invalid request format"
+      : "Internal server error";
+      
+    return NextResponse.json(
+      { message: errorMessage },
+      { status: error instanceof SyntaxError ? 400 : 500 }
+    );
   }
 }
