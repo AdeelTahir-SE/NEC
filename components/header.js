@@ -43,7 +43,7 @@ export default function Header() {
                       : `/${item.toLowerCase().replace(" ", "")}`
                   }
                   className="block px-4 py-2 md:p-0 hover:underline"
-                  onClick={() => setIsOpen(false)} // Close menu on click
+                  onClick={() => setIsOpen(false)} 
                 >
                   {item}
                 </Link>
