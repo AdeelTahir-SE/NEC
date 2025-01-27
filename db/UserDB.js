@@ -49,24 +49,20 @@ export async function getUser() {
   return new Promise((resolve, reject) => {
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
-        console.error("No authenticated user found");
         resolve(null);
         return;
       }
 
-      console.log("Authenticated User UID:", user.uid); // Debugging
 
       try {
         const userDocRef = doc(db, "users", user.uid);
         const userSnapshot = await getDoc(userDocRef);
 
         if (!userSnapshot.exists()) {
-          console.error("User data not found in Firestore for UID:", user.uid);
           resolve(null);
           return;
         }
 
-        console.log("User Data Found:", userSnapshot.data()); // Debugging
         resolve(userSnapshot.data());
       } catch (error) {
         console.error("Error fetching user data:", error.message);
