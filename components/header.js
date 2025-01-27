@@ -33,14 +33,14 @@ export default function Header() {
         } md:opacity-100 md:flex md:flex-row md:static md:shadow-none md:bg-transparent md:items-center md:space-x-6`}
       >
         <ul className="flex flex-col md:flex-row md:space-x-6 text-center md:text-left">
-          {["Home", "About", "Events", "Highlights", "Contact", "Register","createEvent"].map(
+          {["home", "about", "events", "highlights", "contact", "register","createEvent"].map(
             (item) => (
               <li key={item} className="py-3 md:py-0">
                 <Link
                   href={
-                    item == "Home"
+                    item == "home"
                       ? "/"
-                      : `/${item.toLowerCase().replace(" ", "")}`
+                      : `/${item.replace(" ", "")}`
                   }
                   className="block px-4 py-2 md:p-0 hover:underline"
                   onClick={() => setIsOpen(false)} 
