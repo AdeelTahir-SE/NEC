@@ -3,22 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useUserContext } from "@/context/context";
-import { Menu, X } from "lucide-react"; 
-
 export default function Header() {
   const { user } = useUserContext();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="flex justify-between items-center px-4 md:px-8 py-3 bg-white text-slate-700 shadow-md relative">
-      {/* Logo */}
       <div>
         <Image src="/logo.svg" alt="Next.js E-commerce" width={150} height={50} />
       </div>
 
       {/* Mobile Menu Button */}
       <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <X size={28} /> : <Menu size={28} />}
+        {isOpen ?  <Image src="/cross.svg" alt="X" width={28} height={28}/> :         <Image src="/menu.svg" alt="menu" width={28} height={28} />
+      }
       </button>
 
       {/* Navigation Menu */}
