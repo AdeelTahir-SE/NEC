@@ -47,7 +47,7 @@ export default function Footer() {
           <h4 className="text-lg font-bold text-[#f5f9ff] mb-2">Contact Info</h4>
           <p className="text-sm text-[#d2eae9] mb-2">123 Street, City, Country</p>
           <p className="text-sm text-[#d2eae9] mb-2">+123 456 7890</p>
-          <p className="text-sm text-[#d2eae9] mb-2">email@example.com</p>
+          <p className="text-sm text-[#d2eae9] mb-2">email@.com</p>
         </div>
 
         {/* Footer Social Media */}

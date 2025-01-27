@@ -9,10 +9,14 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center px-4 md:px-8 py-3 bg-white text-slate-700 shadow-md relative z-50">
-      {/* Logo */}
+    <header className="flex justify-between items-center px-4 md:px-8 py-3 m-0 bg-white text-slate-700 shadow-md relative z-50">
       <div>
-        <Image src="/logo.svg" alt="Next.js E-commerce" width={150} height={50} />
+        <Image
+          src="/logo.svg"
+          alt="Next.js E-commerce"
+          width={150}
+          height={50}
+        />
       </div>
 
       {/* Mobile Menu Button */}
@@ -31,32 +35,36 @@ export default function Header() {
         } md:opacity-100 md:flex md:flex-row md:static md:shadow-none md:bg-transparent md:items-center md:space-x-6`}
       >
         <ul className="flex flex-col md:flex-row md:space-x-6 text-center md:text-left">
-          {["Home", "About", "Events", "Highlights", "Contact","Register"].map((item) => (
-            <li key={item} className="py-3 md:py-0">
-              <Link
-                href={item=="Home"?"/":`/${item.toLowerCase().replace(" ", "")}`}
-                className="block px-4 py-2 md:p-0 hover:underline"
-                onClick={() => setIsOpen(false)} // Close menu on click
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
+          {["Home", "About", "Events", "Highlights", "Contact", "Register"].map(
+            (item) => (
+              <li key={item} className="py-3 md:py-0">
+                <Link
+                  href={
+                    item == "Home"
+                      ? "/"
+                      : `/${item.toLowerCase().replace(" ", "")}`
+                  }
+                  className="block px-4 py-2 md:p-0 hover:underline"
+                  onClick={() => setIsOpen(false)} // Close menu on click
+                >
+                  {item}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       </nav>
 
-    {/* User / Join Button */}
-<div className="hidden md:flex">
-  <Link
-    href="/register"
-    className="border-2 border-slate-700 min-w-[120px] rounded-3xl px-6 py-2 
+      <div className="hidden md:flex">
+        <Link
+          href="/register"
+          className="border-2 border-slate-700 min-w-[120px] rounded-3xl px-6 py-2 
                hover:bg-slate-700 hover:text-white transition-all flex 
                justify-center items-center text-center"
-  >
-    {user ? `${user.name.slice(0, 5)}...` : "Join Now"}
-  </Link>
-</div>
-
+        >
+          {user ? `${user.name.slice(0, 5)}...` : "Join Now"}
+        </Link>
+      </div>
     </header>
   );
 }
