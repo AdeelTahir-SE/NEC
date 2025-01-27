@@ -24,9 +24,11 @@ export default function UpComingEvents() {
           events.map((ele) => (
             <UpComingEventsCard
               key={ele.id}
-              title="Upcoming Events"
-              desc={ele.body}
-              image="/testingimage.svg"
+              id={ele.id}
+              title={ele.title}
+              desc={ele.desc}
+              image={ele.imageurl}
+              users={ele.users}
             />
           ))
         ) : (

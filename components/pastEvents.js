@@ -25,8 +25,8 @@ export default function PastEvents() {
             <PastEventsCard
               key={ele.id}
               title={ele.title}
-              desc={ele.body}
-              image="/testingimage.svg"
+              desc={ele.desc}
+              image={ele.imageurl}
             />
           ))
         ) : (

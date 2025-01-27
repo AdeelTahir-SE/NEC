@@ -11,8 +11,8 @@ export default function Event(){
             <Header />
             <EventsHeroSection/>
             <FeaturedEvents/>
-            <PastEvents/>
             <UpComingEvents/>
+            <PastEvents/>
             <Footer />
         </div>
     )
