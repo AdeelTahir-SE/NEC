@@ -19,7 +19,6 @@ export default function Header() {
         />
       </div>
 
-      {/* Mobile Menu Button */}
       <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? (
           <Image src="/cross.svg" alt="Close Menu" width={28} height={28} />
@@ -28,7 +27,6 @@ export default function Header() {
         )}
       </button>
 
-      {/* Navigation Menu with Highest z-index */}
       <nav
         className={`absolute top-full left-0 w-full bg-white shadow-md transition-all duration-300 ease-in-out z-50 ${
           isOpen ? "flex flex-col py-4 opacity-100" : "hidden opacity-0"

@@ -8,10 +8,10 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   try {
     // Parse the incoming JSON body
-    const { title, desc, imgurl, type } = await request.json();
+    const { title, desc, imgurl, date } = await request.json();
     
     // Validate required fields
-    if (!title || !desc || !type) {
+    if (!title || !desc || !date) {
       return NextResponse.json(
         { message: "Missing required fields" },
         { status: 400 }
@@ -19,10 +19,10 @@ export async function POST(request) {
     }
 
     // Create event object
-    const event = { title, desc, imgurl, type };
+    const event = { title, desc, imgurl, date };
     
     // Save to database
-    await createEvent(title, desc, imgurl, type);
+    await createEvent(title, desc, imgurl, date);
 
     return NextResponse.json(
       { message: "Event created successfully", event },

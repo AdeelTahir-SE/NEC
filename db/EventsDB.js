@@ -61,7 +61,7 @@ export async function getEventsbyType(type) {
 
     // Format the current date as 'YYYY-MM-DD' for comparison
     const formattedCurrentDate = currentDate.toISOString().split('T')[0]; // e.g., '2025-01-27'
-
+   console.log(formattedCurrentDate);
     // Build the query based on the provided type
     let eventsQuery;
 
@@ -76,9 +76,8 @@ export async function getEventsbyType(type) {
 
       // Case when the date field is present
       if (eventDate) {
-        const eventDateFormatted = eventDate; // Assuming eventDate is already a 'YYYY-MM-DD' string
+        const eventDateFormatted = eventDate;
 
-        // For "Upcoming Events", add events with date >= current date
         if (type === "Upcoming Events" && eventDateFormatted >= formattedCurrentDate) {
           events.push({
             id: doc.id,

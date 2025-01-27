@@ -24,7 +24,7 @@ export default function FeaturedEvents() {
       <div className="flex flex-row items-center justify-center">
         <div className="shadow-2xl" style={{ boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
           <Image
-            src={events[0]?.imageurl}
+            src={events[0]?.imageurl?events[0].imageurl:"/testingimage.svg"}
             alt="Event Image"
             width={400}  
             height={300} 

@@ -3,10 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { registerForEvent } from "@/db/EventsDB";
 import { useUserContext } from "@/context/context";
 
-async function eventRegister(uid,eid){
-  await registerForEvent(eid,uid)
 
-}
 export default function PastEventsCard({id,title, desc, image,isRegistered}) {
   const { user } = useUserContext();
   return (
