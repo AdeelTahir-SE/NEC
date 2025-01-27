@@ -11,41 +11,46 @@ export default function CreateEvent() {
   const [image, setImage] = useState(null);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false); // State for loading
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!title || !description || !date || !image) {
       setError("All fields are required.");
       return;
     }
-  
+
     try {
+      setLoading(true); // Set loading to true when starting the submission process
+
       // Prepare form data
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
       formData.append("date", date);
       formData.append("image", image);
-  
+
       const response = await fetch("/api/createevent", {
         method: "POST",
         body: formData,
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to create event");
       }
-  
+
       const data = await response.json();
       setSuccess(data.message); // Assuming your API returns a success message
       setError(""); // Clear any previous errors
     } catch (err) {
       setError("An error occurred while creating the event.");
       setSuccess(""); // Clear success message if there's an error
+    } finally {
+      setLoading(false); // Set loading to false after the submission is complete
     }
   };
-  
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -106,7 +111,7 @@ export default function CreateEvent() {
             {/* Image Upload */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-[#333] mb-1">
-                Event Image
+                Event Image (png,jpg supported)
               </label>
               <input
                 type="file"
@@ -121,12 +126,20 @@ export default function CreateEvent() {
             {/* Success Message */}
             {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
 
+            {/* Loading Spinner */}
+            {loading && (
+              <div className="flex justify-center mb-4">
+                <div className="w-8 h-8 border-4 border-t-4 border-blue-500 rounded-full animate-spin"></div>
+              </div>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-[#0c273f] text-white font-semibold py-2 rounded-md hover:bg-[#155a7c] transition duration-300"
+              disabled={loading} // Disable button when loading
             >
-              Create Event
+              {loading ? "Creating..." : "Create Event"}
             </button>
           </form>
         </div>

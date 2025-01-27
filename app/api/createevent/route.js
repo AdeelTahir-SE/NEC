@@ -28,6 +28,10 @@ export async function POST(req) {
       return NextResponse.json({ error: "All fields are required." }, { status: 400 });
     }
 
+    // Debug: Log the image type and file name
+    console.log('File Name:', image.name);
+    console.log('File MIME Type:', image.type);
+
     const arrayBuffer = await image.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
@@ -38,6 +42,7 @@ export async function POST(req) {
           folder: "events", // Folder to store the image
           use_filename: true,
           unique_filename: true, // Ensure the filename is unique
+          options: { "dangerouslyAllowSVG": true }, // Allow SVG uploads
         },
         (error, result) => {
           if (error) {
@@ -53,7 +58,7 @@ export async function POST(req) {
     const imageUrl = uploadResult.secure_url;
 
     // Create event in the database with the uploaded image URL
-    await createEvent(title, description, imageUrl,date);
+    await createEvent(title, description, imageUrl, date);
 
     return NextResponse.json({
       message: "Event created successfully!",
