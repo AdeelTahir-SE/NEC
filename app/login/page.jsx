@@ -9,6 +9,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading,setLoading]=useState(false);
 
   const router = useRouter(); 
 
@@ -16,6 +17,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
+      setLoading(true);
       await loginUser(email, password);
 
       // Navigate to home page
@@ -23,6 +25,7 @@ export default function Login() {
     } catch (err) {
       setError(err.message || "An error occurred while logging in.");
     }
+    setLoading(false);
   };
 
   return (
@@ -81,7 +84,7 @@ export default function Login() {
 
         <p className="text-sm text-center text-[#333] mt-4">
           Do not have an account?{" "}
-          <Link href="/register" className="text-[#0f8f98] hover:underline">
+          <Link href="/register" className="text-[#0f8f98] hover:underline" disabled={loading}>
             Register
           </Link>
         </p>

@@ -11,6 +11,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading,setLoading]=useState(false);
 
   const router = useRouter(); 
 
@@ -23,6 +24,7 @@ export default function Register() {
     }
 
     try {
+      setLoading(true);
       await registerUser(name,email, password);
       setSuccess("User registered successfully.");
       setName("");
@@ -36,6 +38,7 @@ export default function Register() {
       setError(err.message || "An error occurred while registering.");
       setSuccess("");
     }
+    setLoading(false);
   };
 
   return (
@@ -122,6 +125,7 @@ export default function Register() {
           {/* Register Button */}
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-[#0c273f] text-white font-semibold py-2 rounded-md hover:bg-[#155a7c] transition duration-300"
           >
             Register

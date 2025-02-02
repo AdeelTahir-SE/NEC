@@ -10,6 +10,7 @@ export default function UserContext({ children }) {
   async function fetchUser() {
     try {
       const data = await getUser();
+      console.log(data)
       setUser(data);
       setLoading(false);
     } catch (err) {
