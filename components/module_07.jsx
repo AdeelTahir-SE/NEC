@@ -3,9 +3,9 @@ import React from "react";
 const MainPage7 = () => {
   return (
     <footer className="bg-[#314c68] text-white py-10">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
-        <div className="col-span-1">
+        <div className="col-span-1 text-center md:text-left">
           <h2 className="text-2xl font-bold">NEC</h2>
           <p className="mt-4 text-sm">
             Lorem Ipsum Dolor Sit Amet Go Sit Amet Consectetur Lorem Ipsum Dolor
@@ -14,7 +14,7 @@ const MainPage7 = () => {
         </div>
 
         {/* Navigation */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold mb-4">NAVIGATION</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -36,7 +36,7 @@ const MainPage7 = () => {
         </div>
 
         {/* Contact Info */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold mb-4">CONTACT INFO</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -55,9 +55,9 @@ const MainPage7 = () => {
         </div>
 
         {/* Social Media */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold mb-4">SOCIAL</h3>
-          <div className="flex space-x-4">
+          <div className="flex justify-center md:justify-start space-x-4">
             <a href="#" className="hover:text-gray-300">
               <i className="fab fa-facebook-f">F</i>
             </a>
