@@ -91,7 +91,7 @@ export default function Home() {
               className="flex items-center gap-2 px-5 py-2 bg-white text-[#104474] font-bold rounded-full shadow-md hover:bg-[#0f8f98] hover:text-white hover:translate-y-[-3px]"
             >
               <Image
-                src={`/${platform.toLowerCase()} logo.webp`}
+                src={`/${platform.toLowerCase()}_logo.webp`}
                 alt={`${platform} Icon`}
                 className="w-5 h-5 rounded-full"
                 width={100}
