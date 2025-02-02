@@ -6,6 +6,7 @@ import { useUserContext } from "@/context/context";
 
 export default function Header() {
   const { user } = useUserContext();
+  console.log(user)
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -33,7 +34,7 @@ export default function Header() {
         } md:opacity-100 md:flex md:flex-row md:static md:shadow-none md:bg-transparent md:items-center md:space-x-6`}
       >
         <ul className="flex flex-col md:flex-row md:space-x-6 text-center md:text-left">
-          {["home", "about", "events", "highlights", "contact", "register","createEvent"].map(
+          {user?.email==process.env.NEXT_PUBLIC_ADMIN_MAIL?(["home", "about", "events", "highlights", "contact","createEvent"].map(
             (item) => (
               <li key={item} className="py-3 md:py-0">
                 <Link
@@ -49,6 +50,24 @@ export default function Header() {
                 </Link>
               </li>
             )
+          )):(
+            ["home", "about", "events", "highlights", "contact"].map(
+              (item) => (
+                <li key={item} className="py-3 md:py-0">
+                  <Link
+                     href={
+                      item == "home"
+                        ? "/"
+                        : `/${item.replace(" ", "")}`
+                    }
+                    className="block px-4 py-2 md:p-0 hover:underline"
+                    onClick={() => setIsOpen(false)} 
+                  >
+                    {item}
+                  </Link>
+                </li>
+              )
+            )
           )}
         </ul>
       </nav>
@@ -60,7 +79,7 @@ export default function Header() {
                hover:bg-slate-700 hover:text-white transition-all flex 
                justify-center items-center text-center"
         >
-          {user ? `${user.name.slice(0, 5)}...` : "Join Now"}
+          {user ? `${user?.name.slice(0, 5)}...` : "Join Now"}
         </Link>
       </div>
     </header>

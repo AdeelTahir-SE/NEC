@@ -1,7 +1,6 @@
 
-import { collection, addDoc, getDocs,doc,updateDoc,arrayUnion, query, where } from "firebase/firestore"
+import { collection, addDoc, getDocs,getDoc,doc,updateDoc,arrayUnion, query, where } from "firebase/firestore"
 import FB from "./connectDB"
-import { format } from "date-fns"; // You may need this to format the date for comparison
 
 const { db } = FB;
 

@@ -5,9 +5,6 @@ import { auth } from "./connectDB";
 
 const { db } = FB;
 
-/**
- * Register a new user
- */
 export async function registerUser(name, email, password) {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -28,9 +25,7 @@ export async function registerUser(name, email, password) {
   }
 }
 
-/**
- * Log in user
- */
+
 export async function loginUser(email, password) {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -42,23 +37,20 @@ export async function loginUser(email, password) {
   }
 }
 
-/**
- * Get the current authenticated user's Firestore data
- */
 export async function getUser() {
   return new Promise((resolve, reject) => {
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
+        console.log("No user found");
         resolve(null);
         return;
       }
-
-
       try {
         const userDocRef = doc(db, "users", user.uid);
         const userSnapshot = await getDoc(userDocRef);
-
+          console.log(user)
         if (!userSnapshot.exists()) {
+          console.log("No user found in db");
           resolve(null);
           return;
         }
