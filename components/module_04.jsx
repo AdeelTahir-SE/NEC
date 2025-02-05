@@ -1,5 +1,4 @@
 import React from "react";
-import IMG from '../assets/Images/Group 333.png';
 
 const MainPage4 = () => {
   return (
@@ -10,13 +9,7 @@ const MainPage4 = () => {
           Our Vision
         </h2>
         <p className="text-gray-600 leading-relaxed md:leading-loose text-base sm:text-lg md:text-xl lg:text-[1.1rem] xl:text-[1.2rem]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        Our vision is to become a leading platform for nurturing entrepreneurship within the NUST community, empowering students to become successful business leaders and innovators. We aim to create a culture of creativity and problem-solving, where members can turn their entrepreneurial dreams into reality. With a focus on sustainable business practices and social impact, we hope to contribute positively to the entrepreneurial landscape in Pakistan and beyond.
         </p>
       </div>
 
@@ -28,9 +21,7 @@ const MainPage4 = () => {
 
           {/* Illustration */}
           <div className="flex items-center justify-center p-4 sm:p-6 md:p-8">
-            <img
-              src={IMG}
-              alt="Vision Illustration"
+            <img src="/Images/GROUP_333.png" alt="VISION ILLUSTRATION"
               className="w-full h-auto object-contain"
             />
           </div>

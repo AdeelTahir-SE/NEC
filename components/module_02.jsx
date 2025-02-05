@@ -1,6 +1,4 @@
 import React from "react";
-import IMG from "../assets/Images/WHO WE ARE.png";
-import IMG2 from "../assets/Images/Frame4.png";
 
 const MainPage2 = () => {
   return (
@@ -12,9 +10,7 @@ const MainPage2 = () => {
             Empowering{" "}
             <span className="relative inline-block">
               Innovators
-              <img
-                src={IMG2}
-                alt="underline"
+             <img src="/Images/Frame4.png" alt="underline"
                 className="absolute -bottom-4 left-0 w-full max-w-[12rem] md:max-w-[14rem]"
               />
             </span>{" "}
@@ -30,21 +26,13 @@ const MainPage2 = () => {
               Who We Are
             </h3>
             <p className="text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            The NUST Entrepreneurs Society (NEC) is a vibrant community of like-minded individuals passionate about entrepreneurship, innovation, and business development. We strive to cultivate a creative and collaborative environment where students and aspiring entrepreneurs can connect, share ideas, and build their entrepreneurial skills. Through workshops, networking events, and hands-on projects, we aim to empower the next generation of entrepreneurs to turn their ideas into successful ventures.
             </p>
           </div>
 
           {/* Illustration */}
           <div className="lg:w-1/2 w-full flex justify-center">
-            <img
-              src={IMG}
-              alt="Who We Are Illustration"
+            <img src="/Images/WHO_WE_ARE.png" alt="WHO WE ARE ILLUSTRATION"
               className="w-full max-w-[400px] lg:max-w-none lg:w-[90%] xl:w-[85%]"
             />
           </div>

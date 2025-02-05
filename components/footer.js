@@ -11,7 +11,7 @@ export default function Footer() {
             className="w-36 mb-4"
           />
           <p className="text-sm text-[#d2eae9] leading-6">
-            Your company description or some brief text goes here.
+            Growth and Innovation
           </p>
         </div>
 
@@ -45,9 +45,8 @@ export default function Footer() {
         {/* Footer Contact Info */}
         <div className="footer-contact-info flex-1 max-w-[25%]">
           <h4 className="text-lg font-bold text-[#f5f9ff] mb-2">Contact Info</h4>
-          <p className="text-sm text-[#d2eae9] mb-2">123 Street, City, Country</p>
-          <p className="text-sm text-[#d2eae9] mb-2">+123 456 7890</p>
-          <p className="text-sm text-[#d2eae9] mb-2">email@.com</p>
+          <p className="text-sm text-[#d2eae9] mb-2">NUST , H-12 ISLAMABAD</p>
+          <p className="text-sm text-[#d2eae9] mb-2">nustentrepreneursclub@gmail.com</p>
         </div>
 
         {/* Footer Social Media */}

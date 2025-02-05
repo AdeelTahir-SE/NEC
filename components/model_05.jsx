@@ -3,10 +3,10 @@ import React from "react";
 const MainPage5 = () => {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      title: "Chief Technology Officer",
+      name: "Nosherwan Tahir",
+      title: "Office Bearer - Tech and IT",
       description:
-        "Tech visionary with 15+ years experience in scaling AI-driven platforms. Leads our technical strategy and infrastructure development.",
+        "Passionate about technology and IT, Nosherwan drives the technical strategies and IT infrastructure within the society, ensuring seamless digital transformation.",
       social: {
         facebook: "#",
         twitter: "#",
@@ -14,10 +14,10 @@ const MainPage5 = () => {
       },
     },
     {
-      name: "Michael Chen",
-      title: "Lead Product Designer",
+      name: "Muhammad Faseeh",
+      title: "Vice President",
       description:
-        "UI/UX expert specializing in user-centered design. Created award-winning interfaces for Fortune 500 companies.",
+        "Muhammad Faseeh plays a pivotal role in managing operations and helping drive initiatives forward within the society.",
       social: {
         facebook: "#",
         twitter: "#",
@@ -25,10 +25,10 @@ const MainPage5 = () => {
       },
     },
     {
-      name: "Aisha Patel",
-      title: "Senior Blockchain Engineer",
+      name: "Muhammad Ali Imran",
+      title: "President",
       description:
-        "DeFi protocol specialist. Built scalable smart contract systems handling 1M+ daily transactions.",
+        "As the President, Muhammad Ali Imran leads the NUST Entrepreneurs Society with a vision for fostering innovation, entrepreneurship, and student growth.",
       social: {
         facebook: "#",
         twitter: "#",
@@ -36,10 +36,21 @@ const MainPage5 = () => {
       },
     },
     {
-      name: "David Müller",
-      title: "Head of Growth",
+      name: "Abdullah Khalid",
+      title: "Office Bearer - Finance",
       description:
-        "Growth hacking expert. Scaled multiple startups from 0 to 1M+ users through data-driven strategies.",
+        "Abdullah manages the financial aspects of the society, ensuring that all projects are well-funded and financially sound.",
+      social: {
+        facebook: "#",
+        twitter: "#",
+        linkedin: "#",
+      },
+    },
+    {
+      name: "Abeeha Hussain",
+      title: "Office Bearer - Press",
+      description:
+        "XYZ is responsible for managing the society's media presence and public relations, ensuring effective communication with the outside world.",
       social: {
         facebook: "#",
         twitter: "#",
@@ -57,8 +68,7 @@ const MainPage5 = () => {
             Our Team
           </h2>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-[1.2rem] leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis.
+            Meet the dedicated team of individuals working tirelessly to foster innovation, support entrepreneurs, and drive change at the NUST Entrepreneurs Society.
           </p>
         </div>
 

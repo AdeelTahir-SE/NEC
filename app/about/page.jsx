@@ -1,4 +1,3 @@
-
 import MainPage1 from "@/components/module_01";
 import MainPage2 from "@/components/module_02";
 import MainPage3 from "@/components/module_03";

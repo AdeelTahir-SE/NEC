@@ -13,11 +13,11 @@ export default function Header() {
   // Define navigation items based on admin status
   const isAdmin = user?.email === process.env.NEXT_PUBLIC_ADMIN_MAIL;
   const navItems = isAdmin
-    ? ["home", "about", "events", "highlights", "contact","register", "createEvent"]
-    : ["home", "about", "events", "highlights", "contact","register"];
+    ? ["home", "about", "events", "highlights", "contact", "register", "createEvent"]
+    : ["home", "about", "events", "highlights", "contact", "register"];
 
   return (
-    <header className="flex justify-between items-center px-4 md:px-8 py-3 m-0 bg-white text-slate-700 shadow-md relative z-50">
+    <header className="flex justify-between items-center px-4 md:px-8 py-4 bg-white text-slate-700 shadow-md relative z-50 font-semibold">
       {/* Logo */}
       <div>
         <Image src="/logo.svg" alt="Next.js E-commerce" width={150} height={50} />
@@ -44,7 +44,7 @@ export default function Header() {
             <li key={item} className="py-3 md:py-0">
               <Link
                 href={item === "home" ? "/" : `/${item.replace(" ", "")}`}
-                className="block px-4 py-2 md:p-0 hover:underline"
+                className="block px-4 py-2 md:p-0 hover:underline transition-all text-lg tracking-wide capitalize"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
@@ -56,7 +56,7 @@ export default function Header() {
 
       {/* Register / User Name */}
       <div className="hidden md:flex">
-        <Link
+      <Link
           href="/register"
           className="border-2 border-slate-700 min-w-[120px] rounded-3xl px-6 py-2 
                hover:bg-slate-700 hover:text-white transition-all flex 
