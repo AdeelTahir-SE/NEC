@@ -21,7 +21,7 @@ const MainPage4 = () => {
 
           {/* Illustration */}
           <div className="flex items-center justify-center p-4 sm:p-6 md:p-8">
-            <img src="/Images/GROUP_333.png" alt="VISION ILLUSTRATION"
+            <img src="/Images/Group_333.png" alt="VISION ILLUSTRATION"
               className="w-full h-auto object-contain"
             />
           </div>

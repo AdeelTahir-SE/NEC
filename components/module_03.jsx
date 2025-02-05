@@ -7,7 +7,7 @@ const MainPage3 = () => {
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end order-1 lg:order-none px-4 sm:px-0">
                 <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]">
                     <img
-                        src="/Images/GROUP_222.png"
+                        src="/Images/Group_222.png"
                         alt="OUR MISSION ILLUSTRATION"
                         className="w-full h-auto object-contain"
                     />
