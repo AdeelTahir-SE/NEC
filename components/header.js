@@ -13,8 +13,8 @@ export default function Header() {
   // Define navigation items based on admin status
   const isAdmin = user?.email === process.env.NEXT_PUBLIC_ADMIN_MAIL;
   const navItems = isAdmin
-    ? ["home", "about", "events", "highlights", "contact", "register", "createEvent"]
-    : ["home", "about", "events", "highlights", "contact", "register"];
+    ? ["home", "about", "events", "highlights", "contact",  "createEvent"]
+    : ["home", "about", "events", "highlights", "contact"];
 
   return (
     <header className="flex justify-between items-center px-4 md:px-8 py-4 bg-white text-slate-700 shadow-md relative z-50 font-semibold">
