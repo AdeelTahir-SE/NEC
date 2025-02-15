@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged , signOut } from "firebase/auth";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import FB from "./connectDB";
 import { auth } from "./connectDB";
@@ -36,7 +36,15 @@ export async function loginUser(email, password) {
     throw error;
   }
 }
-
+export async function logoutUser() {
+  try {
+    await signOut(auth);
+    console.log("User logged out");
+  } catch (error) {
+    console.error("Error logging out:", error.message);
+    throw error;
+  }
+}
 export async function getUser() {
   return new Promise((resolve, reject) => {
     onAuthStateChanged(auth, async (user) => {
