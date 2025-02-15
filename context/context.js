@@ -29,7 +29,7 @@ export default function UserContext({ children }) {
 
     useEffect(() => {
         fetchUser();
-    });
+    }, []);
     return (
         <Context.Provider value={{ user, loading, logout: handleLogout }}>
             {children}

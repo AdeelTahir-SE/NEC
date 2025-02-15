@@ -5,84 +5,66 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <section className="font-poppins bg-[#fcfdfe] text-[#333]">
+        <section className="font-poppins bg-[#fcfdfe] text-[#333] overflow-x-hidden">
             <Header />
-            <section className="flex flex-col sm:flex-row items-center justify-between py-10 px-5 sm:px-10 bg-[#7ae6dd] gap-7 w-full">
-                <div className="w-full sm:w-1/2 text-left pr-7">
-                    <h1 className="text-3xl sm:text-4xl mb-6 sm:mb-10 leading-snug text-[#000202] text-center sm:text-left">
+            
+            {/* Hero Section */}
+            <section className="flex flex-col sm:flex-row items-center justify-center py-16 px-6 sm:px-12 bg-[#7ae6dd] gap-7 w-full text-center sm:text-left">
+                <div className="max-w-2xl">
+                    <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-[#000202]">
                         NUST <br /> ENTREPRENEURS <br /> CLUB
                     </h1>
-                    <p className="text-base sm:text-lg mb-6 leading-relaxed text-center sm:text-left">
-                        A vibrant community of innovators, dreamers, and doers
-                        ready to disrupt the status quo.
+                    <p className="text-lg sm:text-xl mt-6 leading-relaxed">
+                        A vibrant community of innovators, dreamers, and doers ready to disrupt the status quo.
                     </p>
-                    <div className="flex justify-center sm:justify-start">
-                        <Link
-                            href="/about"
-                            className="px-4 py-2 bg-[#0c273f] text-white font-bold rounded-lg hover:bg-[#155a7c]"
-                        >
+                    <div className="mt-6">
+                        <Link href="/about" className="px-6 py-3 bg-[#0c273f] text-white font-bold text-lg rounded-full hover:bg-[#155a7c] transition-all shadow-lg">
                             See More
                         </Link>
                     </div>
                 </div>
-                <div className="flex justify-center items-center mt-10 sm:mt-0 w-full sm:w-1/2">
+                <div className="max-w-xs sm:max-w-md w-full flex justify-center">
                     <Image
                         src="/hover_secton-removebg-preview.png"
                         alt="Hero Image"
-                        className="rounded-lg w-full max-w-[500px]"
-                        width={600}
+                        className="rounded-xl drop-shadow-xl"
+                        width={500}
                         height={500}
                     />
                 </div>
             </section>
 
             {/* About Us */}
-            <section id="about" className="text-center py-16 px-5 sm:px-10">
-                <h2 className="text-3xl mb-12">About Us</h2>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
-                    <p className="text-sm sm:text-lg leading-relaxed w-full sm:w-1/2 text-center sm:text-left">
-                        We are a leading technology company focused on
-                        delivering cutting-edge solutions to transform
-                        industries and businesses. Our expertise spans across
-                        various domains including Cloud Computing, AI, and
-                        Cybersecurity. At NEC Technologies, we strive to
-                        innovate and create impactful solutions that drive
-                        change and empower businesses to achieve their goals.
+            <section id="about" className="text-center py-20 px-6 sm:px-12">
+                <h2 className="text-4xl font-semibold mb-8">About Us</h2>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-10 max-w-4xl mx-auto">
+                    <p className="text-lg leading-relaxed max-w-xl">
+                        We are a leading technology company focused on delivering cutting-edge solutions to transform industries and businesses. Our expertise spans across various domains including Cloud Computing, AI, and Cybersecurity. NEC Technologies strives to innovate and create impactful solutions that drive change and empower businesses to achieve their goals.
                     </p>
                     <Image
                         src="/about_us-removebg-preview (1).png"
                         alt="About Us Image"
-                        className="rounded-lg mt-5 sm:mt-0 w-full max-w-[350px]"
-                        width={350}
-                        height={350}
+                        className="rounded-xl drop-shadow-xl"
+                        width={400}
+                        height={400}
                     />
                 </div>
             </section>
 
             {/* Upcoming Events */}
-            <section
-                id="upcoming-events"
-                className="py-16 text-center bg-[#abfff1] text-[#333] px-5 sm:px-10 w-full"
-            >
-                <h2 className="text-3xl mb-12 text-[#1f4e79] font-bold">
-                    Upcoming Events
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+            <section id="upcoming-events" className="py-20 text-center bg-[#abfff1] px-6 sm:px-12">
+                <h2 className="text-4xl font-semibold text-[#1f4e79] mb-10">Upcoming Events</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {[1, 2, 3, 4].map((item) => (
-                        <div
-                            key={item}
-                            className="text-center p-4 bg-[#0e577b] rounded-lg shadow-md transition-transform hover:translate-y-[-5px] hover:shadow-lg w-full max-w-[300px] mx-auto"
-                        >
+                        <div key={item} className="bg-[#0e577b] p-6 rounded-xl shadow-xl transition-all hover:scale-105">
                             <Image
                                 src={`/upcoming events${item}.jpg`}
                                 alt={`Event Image ${item}`}
-                                className="rounded-lg mb-3 transition-transform hover:scale-110 w-full"
+                                className="rounded-lg mb-4"
                                 width={300}
                                 height={300}
                             />
-                            <p className="text-white font-semibold">
-                                Event Name {item}
-                            </p>
+                            <p className="text-white font-semibold text-lg">Event Name {item}</p>
                         </div>
                     ))}
                 </div>
@@ -141,8 +123,12 @@ export default function Home() {
     </div>
 </section>
 
-
             <Footer />
         </section>
     );
 }
+
+
+
+
+ 
