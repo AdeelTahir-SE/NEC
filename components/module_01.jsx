@@ -3,7 +3,7 @@ import Header from './header'
 
 const MainPage1 = () => {
   return (
-    <div className="bg-grey min-h-screen">
+    <div className="bg-grey">
       {/* Header */}
       <Header />
       {/* Hero Section */}

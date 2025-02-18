@@ -14,7 +14,7 @@ const MainPage2 = () => {
                 className="absolute -bottom-4 left-0 w-full max-w-[12rem] md:max-w-[14rem]"
               />
             </span>{" "}
-            to Build the Future
+            to Build the Future 
           </h2>
         </div>
 
